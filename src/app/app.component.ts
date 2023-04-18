@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component,HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,8 +6,7 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'appname';
-
+  title = 'showtime';
   navbg:any;
   @HostListener('document:scroll') scrollover(){
     console.log(document.body.scrollTop,'scrolllength#');
