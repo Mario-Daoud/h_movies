@@ -18,6 +18,8 @@ export class MovieDetailsComponent implements OnInit {
   getMovieDetailResult: any;
   getMovieVideoResult: any;
   getMovieCastResult: any;
+  getMovieReviews: any;
+
   ngOnInit(): void {
     let getParamId = this.router.snapshot.paramMap.get('id');
     console.log(getParamId, 'getparamid#');
@@ -25,6 +27,7 @@ export class MovieDetailsComponent implements OnInit {
     this.getMovie(getParamId);
     this.getVideo(getParamId);
     this.getMovieCast(getParamId);
+    this.getReviews(getParamId);
   }
 
   getMovie(id: any) {
@@ -78,4 +81,12 @@ export class MovieDetailsComponent implements OnInit {
       this.getMovieCastResult = result.cast;
     });
   }
+
+  getReviews(id: any) {
+    this.service.getReviews(id).subscribe((result) => {
+      console.log(result.results, 'Reviews#');
+      this.getMovieReviews = result.results;
+    });
+  }
+  
 }

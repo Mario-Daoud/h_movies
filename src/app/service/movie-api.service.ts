@@ -48,6 +48,12 @@ export class MovieApiService {
     );
   }
 
+  getReviews(data: any): Observable<any> {
+    return this.http.get(
+      `${this.baseurl}/movie/${data}/reviews?api_key=${this.apikey}`
+    );
+  }
+
   fetchActionMovies(): Observable<any> {
     return this.http.get(
       `${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=28`

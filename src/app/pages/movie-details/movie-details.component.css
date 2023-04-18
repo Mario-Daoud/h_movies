@@ -23,3 +23,13 @@ a:hover {
   color: #ffffff;
   border: 2px solid #ffffff;
 }
+
+.review h5 {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.review p {
+  font-weight: 100;
+  font-size: 0.8rem;;
+}
