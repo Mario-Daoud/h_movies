@@ -97,4 +97,11 @@ export class HomeComponent implements OnInit {
       this.thrillerMovieResult = result.results;
     });
   }
+
+  doubleDownClicked() {
+    window.scroll({
+      top: window.innerHeight * 95 / 100,
+      behavior: 'smooth'
+    });
+}
 }

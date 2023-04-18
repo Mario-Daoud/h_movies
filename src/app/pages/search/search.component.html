@@ -6,28 +6,21 @@
           type="text"
           class="form-control"
           formControlName="movieName"
-          placeholder="Serch Movie Here ..."
+          placeholder="Search for Movie..."
         />
       </div>
 
       <div class="col-lg-2">
-        <button class="btn btn-md">Serch</button>
+        <button class="btn btn-md">Search</button>
       </div>
     </div>
   </form>
 
-  <div class="row mt-5">
-    <div class="col-lg-4" *ngFor="let s of searchResult">
-      <div class="row">
-        <div class="col-lg-3 mt-4 mb-4" *ngIf="s.poster_path">
-          <img
-            src="https://image.tmdb.org/t/p/original/{{ s.poster_path }}"
-            [routerLink]="['/movie', s.id]"
-          />
-        </div>
-        <div class="col-lg-9 mt-4 mb-4">
-          <h5>{{ s.original_title }}</h5>
-        </div>
+  <div class="row">
+    <div class="col-lg-3" *ngFor="let s of searchResult">
+      <div class="mt-3">
+        <h5 style="margin-bottom: 15px;">{{ s.original_title }}</h5>
+        <img src="https://image.tmdb.org/t/p/original/{{ s.poster_path }}" [routerLink]="['/movie', s.id]" class="img-fluid" />
       </div>
     </div>
   </div>
